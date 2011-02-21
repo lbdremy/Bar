@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conversion_history_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    >
+	<ImageView
+	android:id="@+id/image_history"
+	android:layout_width="wrap_content"
+	android:layout_height="40dip"
+	android:gravity="center_vertical"
+	android:paddingLeft="@dimen/padding_history"
+	/>    
+	<TextView
+		android:id="@+id/text_history"
+		android:layout_toRightOf="@id/image_history"
+		android:layout_width="wrap_content"
+		android:layout_height="40dip"
+		android:paddingLeft="@dimen/padding_history"
+		android:gravity="center_vertical"
+	   android:textSize="@dimen/font_history"
+	   android:textStyle="bold"
+	   android:textColor="@color/android:black"
+	/>
+</RelativeLayout>

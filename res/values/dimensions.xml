@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<dimen name="padding_body">8dp</dimen>	
+	<dimen name="padding_unitbutton">2dp</dimen>
+	<dimen name="padding_from_to">5dip</dimen>
+	<dimen name="padding_subtitle">5dp</dimen>
+	<dimen name="padding_history">5dip</dimen>
+	
+	<dimen name="font_subtitle">18sp</dimen>
+	<dimen name="font_unit">15sp</dimen>
+	<dimen name="font_result">18sp</dimen>
+	<dimen name="font_history">15sp</dimen>
+	
+	<dimen name="max_width_edit_text_converter" >30dp</dimen>
+	<dimen name="min_width_edit_text_converter">30dp</dimen>
+</resources>

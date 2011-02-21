@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<unit_weight>
+	<unit name="pound">lbs</unit>
+	<unit name="kilogram">kg</unit>
+</unit_weight>
+

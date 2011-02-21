@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bar</string>
+    <string name="warning_already_here" >You are already here</string>
+    <string name="weight_converter">Weight Converter</string>
+    <string name="size_converter">Distance Converter</string>
+    <string name="volume_converter">Volume Converter</string>
+    <string name="temperature_converter">Temperature Converter</string>
+    <string name="history">History</string>
+   	<string name="example_weight1">lbs</string>
+   	<string name="example_weight2">kg</string>
+   	<string name="from">From:</string>
+   	<string name="to">To:</string>
+   	<string name="select_unit">Select an unit</string>
+</resources>
