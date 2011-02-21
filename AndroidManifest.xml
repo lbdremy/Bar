@@ -13,28 +13,28 @@
         
         <activity android:name="mobi.bar.activity.WeightActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="mobi.bar.activity.WEIGHT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         
         <activity android:name="mobi.bar.activity.SizeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="mobi.bar.activity.SIZE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         
         <activity android:name="mobi.bar.activity.TemperatureActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="mobi.bar.activity.TEMPERATURE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         
         <activity android:name="mobi.bar.activity.VolumeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="mobi.bar.activity.VOLUME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

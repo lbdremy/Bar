@@ -31,7 +31,7 @@ public class VolumeActivity extends Activity {
 	    actionBar.setHomeLogo(intentActionHome);
 	     
 	    /*Anvil Action*/
-	    Intent intentAnvil = new Intent(this, WeightActivity.class);
+	    Intent intentAnvil = new Intent("mobi.bar.activity.WEIGHT");
 	    IntentAction intentActionAnvil = new IntentAction(this,intentAnvil,R.drawable.ic_anvil);
 	    actionBar.addAction(intentActionAnvil);
 	     

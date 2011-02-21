@@ -1,5 +1,7 @@
 package mobi.bar.activity;
 
+import java.net.URI;
+
 import mobi.bar.R;
 import mobi.bar.util.Converter;
 import mobi.bar.widget.UnitSelector;
@@ -10,6 +12,7 @@ import com.markupartist.android.widget.IntentAction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +34,7 @@ public class SizeActivity extends Activity {
 	    actionBar.setHomeLogo(intentActionHome);
 	     
 	    /*Anvil Action*/
-	    Intent intentAnvil = new Intent(this, WeightActivity.class);
+	    Intent intentAnvil = new Intent("mobi.bar.activity.WEIGHT");
 	    IntentAction intentActionAnvil = new IntentAction(this,intentAnvil,R.drawable.ic_anvil);
 	    actionBar.addAction(intentActionAnvil);
 	     
