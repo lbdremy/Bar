@@ -4,6 +4,8 @@ import java.net.URI;
 
 import mobi.bar.R;
 import mobi.bar.util.Converter;
+import mobi.bar.widget.UnitReverse;
+import mobi.bar.widget.UnitReverse.Reverse;
 import mobi.bar.widget.UnitSelector;
 import mobi.bar.widget.UnitSelector.Unit;
 
@@ -16,6 +18,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
@@ -62,6 +65,21 @@ public class SizeActivity extends Activity {
 	    /*Edit Text */
 	    final EditText editText = (EditText) findViewById(R.id.editText);
 	    final TextView resultView = (TextView) findViewById(R.id.result);
+	    
+	    /*Unit Reverse Button */
+	    final UnitReverse unitReverse = (UnitReverse) findViewById(R.id.unitreverse);
+	    
+	    /*Listener Reverse Button */
+	    unitReverse.setReverse(new Reverse(){
+	    	@Override
+	    	public void performReverse(){
+	    		String unitText1 = unitButton1.getUnitText();
+	    		String unitText2 = unitButton2.getUnitText();
+	    		unitButton1.setUnitText(unitText2);
+	    		unitButton2.setUnitText(unitText1);
+	    		refreshResult(editText.getText().toString(),unitButton1, unitButton2,resultView);
+	    	}
+	    });
 	    
 	    /*Listener Unit Button */
 	    unitButton1.setUnit(new Unit() {
@@ -110,7 +128,7 @@ public class SizeActivity extends Activity {
 		if(c.length() > 0){
 			double valueBeforeConvertion = Double.valueOf(c.toString()).doubleValue();
 			double valueAfterConvertion = Converter.converterSize(unitButton1.getUnitText(), unitButton2.getUnitText(), valueBeforeConvertion);
-			resultView.setText("Result: "+String.valueOf(valueAfterConvertion) + " "+ unitButton2.getUnitText(),BufferType.EDITABLE);
+			resultView.setText(String.valueOf(valueAfterConvertion) + " "+ unitButton2.getUnitText(),BufferType.EDITABLE);
 		}
     }
 	

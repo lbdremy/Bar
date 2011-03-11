@@ -1,13 +1,11 @@
 package mobi.bar.widget;
 
 import mobi.bar.R;
-import mobi.bar.util.Converter;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,8 +13,6 @@ import android.widget.ImageView;
 
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.TextView.BufferType;
 
 public class UnitSelector extends RelativeLayout implements OnClickListener{
 	

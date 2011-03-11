@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/unit_text_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="40dip"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/padding_unitbutton"
+    android:paddingRight="@dimen/padding_unitbutton"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@drawable/unitbutton"
+    >
+    <ImageView
+    	android:id="@+id/reverse"
+    	android:layout_width="wrap_content"
+		android:layout_height="40dip"
+		android:gravity="center_vertical"
+		android:src="@drawable/ic_reverse"
+		android:layout_centerVertical="true"
+    />
+    </RelativeLayout>
