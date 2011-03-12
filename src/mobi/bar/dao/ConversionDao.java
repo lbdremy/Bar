@@ -11,4 +11,5 @@ public interface ConversionDao {
 	public void updateConversion(Conversion conversion);
 	public Conversion findConversionById(int id);
 	public List<Conversion> findAllConversion();
+	public boolean isAlreadyExits(Conversion conversion);
 }

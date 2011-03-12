@@ -1,6 +1,5 @@
 package mobi.bar.activity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.markupartist.android.widget.ActionBar;
@@ -8,9 +7,9 @@ import com.markupartist.android.widget.IntentAction;
 
 import mobi.bar.R;
 import mobi.bar.adapter.ConversionAdapter;
-import mobi.bar.util.ConversionHistory;
+import mobi.bar.dao.DaoFactory;
+import mobi.bar.database.entity.Conversion;
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -49,13 +48,12 @@ public class HomeActivity extends Activity {
 	    Intent intentWater = new Intent(this, VolumeActivity.class);
 	    IntentAction intentActionWater = new IntentAction(this,intentWater,R.drawable.ic_water);
 	    actionBar.addAction(intentActionWater);
-	    /*List<COnversion> */
-	    List<ConversionHistory> listConversion = new ArrayList<ConversionHistory>();
-	    listConversion.add(new ConversionHistory(getResources().getDrawable(R.drawable.ic_anvil),"12 lbs = 5.44310844 kg"));
-	    listConversion.add(new ConversionHistory(getResources().getDrawable(R.drawable.ic_thermometer),"10 °C = 50 °F"));
-	    listConversion.add(new ConversionHistory(getResources().getDrawable(R.drawable.ic_water),"10 gallons US = 37.8541178 liters"));
+	    /*List<Conversion> */
+	    List<Conversion> conversions = DaoFactory.getConversionDao(this).findAllConversion();
 	    /*List View: History of conversions */
 	    ListView listHistory = (ListView) findViewById(R.id.list_history);
-	    listHistory.setAdapter(new ConversionAdapter(this, R.layout.conversion_history, listConversion));
+	    if(!conversions.isEmpty()){
+	    listHistory.setAdapter(new ConversionAdapter(this, R.layout.conversion_history, conversions));
+	    }
     }
 }

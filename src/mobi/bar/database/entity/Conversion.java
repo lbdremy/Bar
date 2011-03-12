@@ -1,5 +1,8 @@
 package mobi.bar.database.entity;
 
+import mobi.bar.R;
+import android.graphics.drawable.Drawable;
+
 public class Conversion {
 	
 	private int id;
@@ -7,6 +10,7 @@ public class Conversion {
 	private String unitBefore;
 	private double valueAfter;
 	private String unitAfter;
+	private String kindUnit;
 	
 	public void setValueBefore(double valueBefore) {
 		this.valueBefore = valueBefore;
@@ -33,10 +37,16 @@ public class Conversion {
 		return unitAfter;
 	}
 	
-	public String getId() {
-		return null;
+	public int getId() {
+		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public void setKindUnit(String kindUnit) {
+		this.kindUnit = kindUnit;
+	}
+	public String getKindUnit() {
+		return kindUnit;
 	}
 }

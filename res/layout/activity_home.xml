@@ -16,6 +16,7 @@
 	    	android:paddingLeft="@dimen/padding_body"
 	    	android:paddingRight="@dimen/padding_body"
 	   		android:paddingTop="@dimen/padding_body"
+	   		android:paddingBottom="@dimen/padding_body"
 		   >
 			   <ImageView
 			   android:layout_width="wrap_content"

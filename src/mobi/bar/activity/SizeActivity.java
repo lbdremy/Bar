@@ -1,8 +1,8 @@
 package mobi.bar.activity;
 
-import java.net.URI;
-
 import mobi.bar.R;
+import mobi.bar.dao.DaoFactory;
+import mobi.bar.database.entity.Conversion;
 import mobi.bar.util.Converter;
 import mobi.bar.widget.UnitReverse;
 import mobi.bar.widget.UnitReverse.Reverse;
@@ -14,16 +14,22 @@ import com.markupartist.android.widget.IntentAction;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 
 public class SizeActivity extends Activity {
+	
+	private double valueBeforeConvertion;
+	private String unitBefore;
+	private double valueAfterConvertion;
+	private String unitAfter;
+	
+	private String lastModification;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,12 +131,34 @@ public class SizeActivity extends Activity {
     }
 	
 	public void refreshResult(CharSequence c,UnitSelector unitButton1, UnitSelector unitButton2,TextView resultView){
-		if(c.length() > 0){
-			double valueBeforeConvertion = Double.valueOf(c.toString()).doubleValue();
-			double valueAfterConvertion = Converter.converterSize(unitButton1.getUnitText(), unitButton2.getUnitText(), valueBeforeConvertion);
+		lastModification = c.toString();
+		if(lastModification.length() > 0){
+			valueBeforeConvertion = Double.valueOf(c.toString()).doubleValue();
+			valueAfterConvertion = Converter.converterSize(unitButton1.getUnitText(), unitButton2.getUnitText(), valueBeforeConvertion);
+			
+			unitBefore = unitButton1.getUnitText();
+			unitAfter =  unitButton2.getUnitText();
 			resultView.setText(String.valueOf(valueAfterConvertion) + " "+ unitButton2.getUnitText(),BufferType.EDITABLE);
 		}
+	    
     }
+	
+	@Override
+	protected void onPause() {
+		if(lastModification !=  null && lastModification.length() > 0) {
+			Conversion conversion = new Conversion();
+			conversion.setUnitBefore(unitBefore);
+			conversion.setUnitAfter(unitAfter);
+			conversion.setValueAfter(valueAfterConvertion);
+			conversion.setValueBefore(valueBeforeConvertion);
+			conversion.setKindUnit("size");
+
+			if(!DaoFactory.getConversionDao(this).isAlreadyExits(conversion)){
+			DaoFactory.getConversionDao(this).addConversion(conversion);
+			}
+		}
+		super.onPause();
+	}
 	
 	
 }
