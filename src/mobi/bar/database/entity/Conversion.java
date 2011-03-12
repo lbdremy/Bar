@@ -1,8 +1,5 @@
 package mobi.bar.database.entity;
 
-import mobi.bar.R;
-import android.graphics.drawable.Drawable;
-
 public class Conversion {
 	
 	private int id;
