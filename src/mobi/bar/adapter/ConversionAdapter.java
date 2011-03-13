@@ -52,13 +52,13 @@ public class ConversionAdapter extends ArrayAdapter<Conversion>{
 
 	private Drawable getDrawable(Conversion conversion){
 		Drawable drawable = null;
-		if(conversion.getKindUnit().compareTo("size") == 0){
+		if(conversion.getKindUnit()== Conversion.KIND_UNIT_SIZE){
 			drawable = getContext().getResources().getDrawable(R.drawable.ic_ruler);
-		}else if(conversion.getKindUnit().compareTo("temperature") == 0){
+		}else if(conversion.getKindUnit() == Conversion.KIND_UNIT_TEMPERATURE){
 			drawable = getContext().getResources().getDrawable(R.drawable.ic_thermometer);
-		}else if(conversion.getKindUnit().compareTo("volume") == 0){
+		}else if(conversion.getKindUnit() == Conversion.KIND_UNIT_VOLUME){
 			drawable = getContext().getResources().getDrawable(R.drawable.ic_water);
-		}else if(conversion.getKindUnit().compareTo("weight") == 0){
+		}else if(conversion.getKindUnit() ==  Conversion.KIND_UNIT_WEIGHT){
 			drawable = getContext().getResources().getDrawable(R.drawable.ic_anvil);
 		}
 		return drawable;

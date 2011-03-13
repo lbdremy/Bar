@@ -2,12 +2,17 @@ package mobi.bar.database.entity;
 
 public class Conversion {
 	
+	public final static int KIND_UNIT_WEIGHT = 1;
+	public final static int KIND_UNIT_VOLUME = 2;
+	public final static int KIND_UNIT_SIZE = 3;
+	public final static int KIND_UNIT_TEMPERATURE = 4;
+	
 	private int id;
 	private double valueBefore;
 	private String unitBefore;
 	private double valueAfter;
 	private String unitAfter;
-	private String kindUnit;
+	private int kindUnit;
 	
 	public void setValueBefore(double valueBefore) {
 		this.valueBefore = valueBefore;
@@ -40,10 +45,10 @@ public class Conversion {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setKindUnit(String kindUnit) {
+	public void setKindUnit(int kindUnit) {
 		this.kindUnit = kindUnit;
 	}
-	public String getKindUnit() {
+	public int getKindUnit() {
 		return kindUnit;
 	}
 }

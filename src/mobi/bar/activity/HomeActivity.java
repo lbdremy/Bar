@@ -15,7 +15,9 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 public class HomeActivity extends Activity {
-    /** Called when the activity is first created. */
+    
+	private ListView listHistory;
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +50,27 @@ public class HomeActivity extends Activity {
 	    Intent intentWater = new Intent(this, VolumeActivity.class);
 	    IntentAction intentActionWater = new IntentAction(this,intentWater,R.drawable.ic_water);
 	    actionBar.addAction(intentActionWater);
-	    /*List<Conversion> */
-	    List<Conversion> conversions = DaoFactory.getConversionDao(this).findAllConversion();
+	    
 	    /*List View: History of conversions */
-	    ListView listHistory = (ListView) findViewById(R.id.list_history);
-	    if(!conversions.isEmpty()){
-	    listHistory.setAdapter(new ConversionAdapter(this, R.layout.conversion_history, conversions));
-	    }
+	    listHistory = (ListView) findViewById(R.id.list_history);
+	    refreshHistory(listHistory);
     }
+    
+    private void refreshHistory(ListView listview){
+    	/*List<Conversion> */
+    	DaoFactory.getConversionDao(this).removeAllConversion("15,5");
+	    List<Conversion> conversions = DaoFactory.getConversionDao(this).findAllConversion("15");
+    	if(!conversions.isEmpty()){
+    	    listHistory.setAdapter(new ConversionAdapter(this, R.layout.conversion_history, conversions));
+    	    }
+    }
+
+	@Override
+	protected void onRestart() {
+		refreshHistory(listHistory);
+		super.onRestart();
+	}
+    
+    
+    
 }

@@ -14,12 +14,12 @@ public class DBHelper extends SQLiteOpenHelper{
 	
 	private static final String CREATE_TABLE_CONVERSION =
 		"CREATE TABLE IF NOT EXISTS `conversion` ("
-		+"	`id_history` INTEGER PRIMARY KEY,"
+		+"	`id` INTEGER PRIMARY KEY,"
 		+"	`unit_before` varchar(40) NOT NULL,"
 		+"`value_before` double NOT NULL,"
 		+"	`unit_after` varchar(40) NOT NULL ,"
 		+"`value_after` double NOT NULL,"
-		+"	`kind_unit` varchar(40) NOT NULL "
+		+"	`kind_unit` int NOT NULL "
 		+");";
 		
 	//private static final String UPDATE_TABLES ="";

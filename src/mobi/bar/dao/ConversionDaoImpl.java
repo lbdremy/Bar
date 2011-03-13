@@ -1,6 +1,7 @@
 package mobi.bar.dao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -94,32 +95,35 @@ public class ConversionDaoImpl implements ConversionDao {
 				conversion.setValueBefore(cursor.getDouble(VALUE_BEFORE_COLUMN));
 				conversion.setUnitAfter(cursor.getString(UNIT_AFTER_COLUMN));
 				conversion.setValueAfter(cursor.getDouble(VALUE_AFTER_COLUMN));
-				conversion.setKindUnit(cursor.getString(VALUE_KIND_UNIT_COLUMN));
+				conversion.setKindUnit(cursor.getInt(VALUE_KIND_UNIT_COLUMN));
 			}while(cursor.moveToNext());
 		}
+		cursor.close();
 		db.close();
 		return conversion;
 	}
 
 	@Override
-	public List<Conversion> findAllConversion() {
+	public List<Conversion> findAllConversion(String limit) {
 		SQLiteDatabase db = dbAdapter.openReadable();
-		
-		Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, null);
+		String orderBy = KEY_ID+" DESC";
+		Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, orderBy,limit);
 		List<Conversion> conversions = new ArrayList<Conversion>();
+		int i = 0;
 		if(cursor.moveToFirst()){
 			do{
+				i++;
 				Conversion  conversion = new Conversion();
 				conversion.setId(cursor.getInt(ID_COLUMN));
 				conversion.setUnitBefore(cursor.getString(UNIT_BEFORE_COLUMN));
 				conversion.setValueBefore(cursor.getDouble(VALUE_BEFORE_COLUMN));
 				conversion.setUnitAfter(cursor.getString(UNIT_AFTER_COLUMN));
 				conversion.setValueAfter(cursor.getDouble(VALUE_AFTER_COLUMN));
-				conversion.setKindUnit(cursor.getString(VALUE_KIND_UNIT_COLUMN));
-				Log.d("DEBUG","List all :"+cursor.getString(VALUE_AFTER_COLUMN));
+				conversion.setKindUnit(cursor.getInt(VALUE_KIND_UNIT_COLUMN));
 				conversions.add(conversion);
 			}while(cursor.moveToNext());
 		}
+		cursor.close();
 		db.close();
 		return conversions;
 	}
@@ -133,8 +137,45 @@ public class ConversionDaoImpl implements ConversionDao {
 		if(cursor.moveToFirst()){
 			return true;
 		}
+		cursor.close();
 		db.close();
 		return false;
+	}
+
+	@Override
+	public Conversion findLastEntry(int kindUnit) {
+SQLiteDatabase db = dbAdapter.openReadable();
+		
+		String where = KEY_KIND_UNIT+"="+kindUnit;
+		String orderBy = KEY_ID+" DESC";
+		String limit = "1";
+		Cursor cursor = db.query(TABLE_NAME, null, where, null, null, null, orderBy, limit);
+		Conversion conversion = null;
+		if(cursor.moveToFirst()){
+			do{
+				conversion = new Conversion();
+				conversion.setId(cursor.getInt(ID_COLUMN));
+				conversion.setUnitBefore(cursor.getString(UNIT_BEFORE_COLUMN));
+				conversion.setValueBefore(cursor.getDouble(VALUE_BEFORE_COLUMN));
+				conversion.setUnitAfter(cursor.getString(UNIT_AFTER_COLUMN));
+				conversion.setValueAfter(cursor.getDouble(VALUE_AFTER_COLUMN));
+				conversion.setKindUnit(cursor.getInt(VALUE_KIND_UNIT_COLUMN));
+			}while(cursor.moveToNext());
+		}
+		cursor.close();
+		db.close();
+		return conversion;
+	}
+
+	@Override
+	public void removeAllConversion(String limit) {
+		List<Conversion> conversions = findAllConversion(limit);
+		Iterator<Conversion> it = conversions.iterator();
+		while(it.hasNext()){
+			Conversion conversion = it.next();
+			removeConversion(conversion);
+		}
+		
 	}
 
 }

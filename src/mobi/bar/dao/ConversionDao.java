@@ -10,6 +10,8 @@ public interface ConversionDao {
 	public void removeConversion(Conversion conversion);
 	public void updateConversion(Conversion conversion);
 	public Conversion findConversionById(int id);
-	public List<Conversion> findAllConversion();
+	public Conversion findLastEntry(int kindUnit);
+	public List<Conversion> findAllConversion(String limit);
 	public boolean isAlreadyExits(Conversion conversion);
+	public void removeAllConversion(String limit);
 }

@@ -30,12 +30,12 @@ public class WeightActivity extends Activity {
 	private String unitAfter;
 	
 	private String lastModification;
+	private static boolean alreadyVisit = false;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
-        
         ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
         /* ACTION BAR */
         /* Home Action*/
@@ -128,9 +128,25 @@ public class WeightActivity extends Activity {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,int after) {}
 		});
+	    /*Restore activity state */
+	    if(alreadyVisit){
+	    	restoreActivityState(editText,unitButton1, unitButton2);
+	    }
     }
 	
+	private void restoreActivityState(EditText editText,UnitSelector unitButton1,UnitSelector unitButton2) {
+		Conversion conversion = DaoFactory.getConversionDao(this).findLastEntry(Conversion.KIND_UNIT_WEIGHT);
+		if(conversion != null){
+			unitButton1.setUnitText(conversion.getUnitBefore());
+			unitButton2.setUnitText(conversion.getUnitAfter());
+			editText.setText(String.valueOf(conversion.getValueBefore()));
+		}
+	}
+
 	public void refreshResult(CharSequence c,UnitSelector unitButton1, UnitSelector unitButton2,TextView resultView){
+		/*Value set since start up */
+        alreadyVisit = true;
+        
 		lastModification = c.toString();
 		if(lastModification.length() > 0){
 			valueBeforeConvertion = Double.valueOf(c.toString()).doubleValue();
@@ -153,12 +169,13 @@ public class WeightActivity extends Activity {
 			conversion.setValueAfter(valueAfterConvertion);
 			Log.d("DEBUG",""+valueAfterConvertion);
 			conversion.setValueBefore(valueBeforeConvertion);
-			conversion.setKindUnit("weight");
+			conversion.setKindUnit(Conversion.KIND_UNIT_WEIGHT);
 			if(!DaoFactory.getConversionDao(this).isAlreadyExits(conversion)){
 				DaoFactory.getConversionDao(this).addConversion(conversion);
 			}
 		}
 		super.onPause();
+			finish();
 	}
 	
 	

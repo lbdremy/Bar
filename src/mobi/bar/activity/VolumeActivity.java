@@ -29,6 +29,8 @@ public class VolumeActivity extends Activity {
 	private String unitAfter;
 	
 	private String lastModification;
+
+	private static boolean alreadyVisit = false;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,9 +129,25 @@ public class VolumeActivity extends Activity {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,int after) {}
 		});
+	    /*Restore activity state */
+	    if(alreadyVisit){
+	    	restoreActivityState(editText,unitButton1, unitButton2);
+	    }
     }
 	
+	private void restoreActivityState(EditText editText,UnitSelector unitButton1,UnitSelector unitButton2) {
+		Conversion conversion = DaoFactory.getConversionDao(this).findLastEntry(Conversion.KIND_UNIT_VOLUME);
+		if(conversion != null){
+			unitButton1.setUnitText(conversion.getUnitBefore());
+			unitButton2.setUnitText(conversion.getUnitAfter());
+			editText.setText(String.valueOf(conversion.getValueBefore()));
+		}
+	}
+	
 	public void refreshResult(CharSequence c,UnitSelector unitButton1, UnitSelector unitButton2,TextView resultView){
+		/*Value set since start up */
+        alreadyVisit = true;
+		
 		lastModification = c.toString();
 		if(lastModification.length() > 0){
 			valueBeforeConvertion = Double.valueOf(c.toString()).doubleValue();
@@ -150,13 +168,14 @@ public class VolumeActivity extends Activity {
 			conversion.setUnitAfter(unitAfter);
 			conversion.setValueAfter(valueAfterConvertion);
 			conversion.setValueBefore(valueBeforeConvertion);
-			conversion.setKindUnit("volume");
+			conversion.setKindUnit(Conversion.KIND_UNIT_VOLUME);
 
 			if(!DaoFactory.getConversionDao(this).isAlreadyExits(conversion)){
 			DaoFactory.getConversionDao(this).addConversion(conversion);
 			}
 		}
 		super.onPause();
+			finish();
 	}
 	
 	
