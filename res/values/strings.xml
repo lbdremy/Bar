@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bar</string>
-    <string name="warning_already_here" >You are already here</string>
     <string name="weight_converter">Weight Converter</string>
     <string name="size_converter">Distance Converter</string>
     <string name="volume_converter">Volume Converter</string>
