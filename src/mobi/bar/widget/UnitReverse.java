@@ -3,7 +3,6 @@ package mobi.bar.widget;
 import mobi.bar.R;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.view.View;
@@ -32,7 +31,6 @@ public class UnitReverse extends RelativeLayout implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		Log.d("DEBUG", "perform Reverse");
 		reverse.performReverse();
 	}
 	

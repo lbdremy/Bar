@@ -17,7 +17,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
@@ -167,7 +166,6 @@ public class WeightActivity extends Activity {
 			conversion.setUnitBefore(unitBefore);
 			conversion.setUnitAfter(unitAfter);
 			conversion.setValueAfter(valueAfterConvertion);
-			Log.d("DEBUG",""+valueAfterConvertion);
 			conversion.setValueBefore(valueBeforeConvertion);
 			conversion.setKindUnit(Conversion.KIND_UNIT_WEIGHT);
 			if(!DaoFactory.getConversionDao(this).isAlreadyExits(conversion)){

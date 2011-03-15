@@ -8,7 +8,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import mobi.bar.database.DBAdapter;
 import mobi.bar.database.entity.Conversion;
@@ -44,7 +43,6 @@ public class ConversionDaoImpl implements ConversionDao {
 		ContentValues contentValues = new ContentValues();
 		contentValues.put(KEY_UNIT_AFTER, conversion.getUnitAfter());
 		contentValues.put(KEY_UNIT_BEFORE,conversion.getUnitBefore());
-		Log.d("DEBUG", "Add: "+conversion.getValueAfter());
 		contentValues.put(KEY_VALUE_AFTER, conversion.getValueAfter());
 		contentValues.put(KEY_VALUE_BEFORE, conversion.getValueBefore());
 		contentValues.put(KEY_KIND_UNIT, conversion.getKindUnit());
