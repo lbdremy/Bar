@@ -42,27 +42,27 @@ public class ConverterMath {
 	}
 	
 	public static double milesToCm(double miles){
-		return miles * kilometerInMiles / kilometerInCm;
+		return miles * kilometerInCm / kilometerInMiles;
 	}
 	
 	public static double cmToMiles(double cm){
-		return cm * kilometerInCm / kilometerInMiles;
+		return cm * kilometerInMiles / kilometerInCm;
 	}
 	
 	public static double mmToMiles(double mm){
-		return mm * kilometerInMm / kilometerInMiles;
+		return mm * kilometerInMiles / kilometerInMm;
 	}
 	
 	public static double milesToMm(double miles){
-		return miles * kilometerInMiles / kilometerInMm;
+		return miles * kilometerInMm / kilometerInMiles;
 	}
 	
 	public static double milesToInch(double miles){
-		return miles * kilometerInMiles / kilometerInInch;
+		return miles * kilometerInInch / kilometerInMiles;
 	}
 	
 	public static double inchToMiles(double inch){
-		return inch * kilometerInInch / kilometerInMiles;
+		return inch * kilometerInMiles / kilometerInInch;
 	}
 	
 	public static double cmToMm(double cm){
@@ -74,19 +74,19 @@ public class ConverterMath {
 	}
 	
 	public static double cmToInch(double cm){
-		return cm * kilometerInCm / kilometerInInch;
+		return cm * kilometerInInch / kilometerInCm;
 	}
 	
 	public static double inchToCm(double inch){
-		return inch * kilometerInInch / kilometerInCm;
+		return inch * kilometerInCm / kilometerInInch;
 	}
 	
 	public static double mmToInch(double mm){
-		return mm * kilometerInMm / kilometerInInch;
+		return mm * kilometerInInch / kilometerInMm;
 	}
 	
 	public static double inchToMm(double inch){
-		return inch * kilometerInInch / kilometerInMm;
+		return inch * kilometerInMm / kilometerInInch;
 	}
 	
 	/*Weight */
@@ -110,11 +110,11 @@ public class ConverterMath {
 	}
 	
 	public static double poundsToOunces(double pounds){
-		return pounds * kilogramInPounds / kilogramInOunces;
+		return pounds *  kilogramInOunces / kilogramInPounds ;
 	}
 	
 	public static double ouncesToPounds(double ounces){
-		return ounces *  kilogramInOunces / kilogramInPounds ;
+		return ounces * kilogramInPounds / kilogramInOunces;
 	}
 	
 	/*Volume */
@@ -138,11 +138,11 @@ public class ConverterMath {
 	}
 	
 	public static double cupsToGallons(double cups){
-		return cups * literInCups / literInGallons;
+		return cups * literInGallons / literInCups;
 	}
 	
 	public static double gallonsToCups(double gallons){
-		return gallons * literInGallons / literInCups;
+		return gallons * literInCups / literInGallons;
 	}
 	
 	//Degrees Celsius C = (F - 32) / 1.8
