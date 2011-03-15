@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<resources>
+    <string name="app_name">Bar</string>
+    <string name="weight_converter">Convertisseur de Poids</string>
+    <string name="size_converter">Convertisseur de Distance</string>
+    <string name="volume_converter">Convertisseur de Volume</string>
+    <string name="temperature_converter">Convertisseur de Température</string>
+    <string name="history">Historique</string>
+   	<string name="from">De:</string>
+   	<string name="to">Vers:</string>
+   	<string name="select_unit">Sélectionner une unité</string>
+</resources>

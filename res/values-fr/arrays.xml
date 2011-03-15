@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<string-array name="weight">
+		<item>lbs</item>
+		<item>kg</item>
+		<item>ounce</item>
+	</string-array>
+	<string-array name="size">
+		<item>km</item>
+		<item>miles</item>
+		<item>cm</item>
+		<item>pouce</item>
+		<item>mm</item>
+	</string-array>
+	<string-array name="temperature">
+		<item>celsius</item>
+		<item>fahrenheit</item>
+		<item>kelvin</item>
+	</string-array>
+	<string-array name="volume">
+		<item>gallon US</item>
+		<item>litre</item>
+		<item>cup US</item>
+	</string-array>
+</resources>
