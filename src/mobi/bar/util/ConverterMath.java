@@ -25,67 +25,67 @@ public class ConverterMath {
 		return cm / kilometerInCm;
 	}
 	
-	public static double kilometersInMm(double kilometers){
+	public static double kilometersToMm(double kilometers){
 		return kilometers * kilometerInMm;
 	}
 	
-	public static double MmInKilometers(double mm){
+	public static double mmToKilometers(double mm){
 		return mm / kilometerInMm;
 	}
 	
-	public static double kilometerInInch(double kilometers){
+	public static double kilometerToInch(double kilometers){
 		return kilometers * kilometerInInch;
 	}
 	
-	public static double inchInKilometer(double inch){
+	public static double inchToKilometer(double inch){
 		return inch / kilometerInInch;
 	}
 	
-	public static double milesInCm(double miles){
+	public static double milesToCm(double miles){
 		return miles * kilometerInMiles / kilometerInCm;
 	}
 	
-	public static double cmInMiles(double cm){
+	public static double cmToMiles(double cm){
 		return cm * kilometerInCm / kilometerInMiles;
 	}
 	
-	public static double MmInMiles(double mm){
+	public static double mmToMiles(double mm){
 		return mm * kilometerInMm / kilometerInMiles;
 	}
 	
-	public static double milesInMm(double miles){
+	public static double milesToMm(double miles){
 		return miles * kilometerInMiles / kilometerInMm;
 	}
 	
-	public static double milesInInch(double miles){
+	public static double milesToInch(double miles){
 		return miles * kilometerInMiles / kilometerInInch;
 	}
 	
-	public static double inchInMiles(double inch){
+	public static double inchToMiles(double inch){
 		return inch * kilometerInInch / kilometerInMiles;
 	}
 	
-	public static double cmInMm(double cm){
+	public static double cmToMm(double cm){
 		return cm * 10;
 	}
 	
-	public static double MmInCm(double mm){
+	public static double mmToCm(double mm){
 		return mm / 10;
 	}
 	
-	public static double cmInInch(double cm){
+	public static double cmToInch(double cm){
 		return cm * kilometerInCm / kilometerInInch;
 	}
 	
-	public static double inchInCm(double inch){
+	public static double inchToCm(double inch){
 		return inch * kilometerInInch / kilometerInCm;
 	}
 	
-	public static double mmInInch(double mm){
+	public static double mmToInch(double mm){
 		return mm * kilometerInMm / kilometerInInch;
 	}
 	
-	public static double inchInMm(double inch){
+	public static double inchToMm(double inch){
 		return inch * kilometerInInch / kilometerInMm;
 	}
 	
@@ -109,11 +109,11 @@ public class ConverterMath {
 		return ounces / kilogramInOunces;
 	}
 	
-	public static double poundsInOunces(double pounds){
+	public static double poundsToOunces(double pounds){
 		return pounds * kilogramInPounds / kilogramInOunces;
 	}
 	
-	public static double ouncesInPounds(double ounces){
+	public static double ouncesToPounds(double ounces){
 		return ounces *  kilogramInOunces / kilogramInPounds ;
 	}
 	
