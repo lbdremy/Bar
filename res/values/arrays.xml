@@ -18,8 +18,8 @@
 		<item>kelvin</item>
 	</string-array>
 	<string-array name="volume">
-		<item>gallon US</item>
+		<item>US gallons </item>
 		<item>liter</item>
-		<item>cup US</item>
+		<item>US cups</item>
 	</string-array>
 </resources>

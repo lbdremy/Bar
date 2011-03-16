@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
 	<dimen name="padding_body">8dp</dimen>	
-	<dimen name="padding_unitbutton">2dp</dimen>
+	<dimen name="padding_unitbutton">3dp</dimen>
+	<dimen name="padding_unitreverse">5dp</dimen>
 	<dimen name="padding_from_to">5dip</dimen>
 	<dimen name="padding_subtitle">5dp</dimen>
 	<dimen name="padding_history">5dip</dimen>
