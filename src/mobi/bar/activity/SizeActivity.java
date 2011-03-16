@@ -156,6 +156,8 @@ public class SizeActivity extends Activity {
 			unitBefore = unitButton1.getUnitText();
 			unitAfter =  unitButton2.getUnitText();
 			resultView.setText(String.valueOf(valueAfterConvertion) + " "+ unitButton2.getUnitText(),BufferType.EDITABLE);
+		}else{
+			resultView.setText("");
 		}
 	    
     }

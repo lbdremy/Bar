@@ -156,6 +156,8 @@ public class WeightActivity extends Activity {
 			
 			resultView.setText(String.valueOf(valueAfterConvertion) + " "+ unitButton2.getUnitText(),BufferType.EDITABLE);
 			
+		}else{
+			resultView.setText("");
 		}
 	}
 
