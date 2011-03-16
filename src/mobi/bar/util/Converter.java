@@ -33,8 +33,8 @@ public class Converter {
 			result = ConverterMath.mmToMiles(value);
 		}else if(unit1.compareTo("miles") == 0 && unit2.compareTo("mm") == 0){
 			result = ConverterMath.milesToMm(value);
-		}else if(unit1.compareTo("miles") == 0 && (unit2.compareTo("inch") == 0 ||unit2.compareTo("pouce") == 0 )){
-			result = ConverterMath.mmToInch(value);
+		}else if(unit1.compareTo("miles") == 0 && (unit2.compareTo("inch") == 0 || unit2.compareTo("pouce") == 0 )){
+			result = ConverterMath.milesToInch(value);
 		}else if((unit1.compareTo("inch") == 0 || unit1.compareTo("pouce") == 0)  && unit2.compareTo("miles") == 0){
 			result = ConverterMath.inchToMiles(value);
 		}else if(unit1.compareTo("cm") == 0 && unit2.compareTo("mm") == 0){
@@ -50,7 +50,7 @@ public class Converter {
 		}else if((unit1.compareTo("inch") == 0 || unit1.compareTo("pouce") == 0)  && unit2.compareTo("mm") == 0){
 			result = ConverterMath.inchToMm(value);
 		}
-		return result;
+		return transformResult(result);
 	}
 	
 	
@@ -73,7 +73,7 @@ public class Converter {
 		}else if(unit1.compareTo("ounce") == 0 && unit2.compareTo("lbs") == 0){
 			result = ConverterMath.ouncesToPounds(value);
 		}
-		return result;
+		return transformResult(result);
 	}
 	
 	
@@ -83,20 +83,20 @@ public class Converter {
 		
 		if(unit1.compareTo(unit2) == 0){
 			result = value;
-		}else if((unit1.compareTo("liter") == 0 || unit1.compareTo("litre") == 0) && unit1.compareTo("gallon US") == 0){
+		}else if((unit1.compareTo("liter") == 0 || unit1.compareTo("litre") == 0) && unit2.compareTo("US gallons") == 0){
 			result = ConverterMath.litersToGallons(value);
-		}else if(unit1.compareTo("gallon US") == 0 && (unit2.compareTo("liter") == 0 || unit2.compareTo("litre") == 0)){
+		}else if(unit1.compareTo("US gallons") == 0 && (unit2.compareTo("liter") == 0 || unit2.compareTo("litre") == 0)){
 			result = ConverterMath.gallonsToLiters(value);
-		}else if((unit1.compareTo("liter") == 0 || unit1.compareTo("litre") == 0) && unit1.compareTo("cup US") == 0){
+		}else if((unit1.compareTo("liter") == 0 || unit1.compareTo("litre") == 0) && unit2.compareTo("US cups") == 0){
 			result = ConverterMath.litersToCups(value);
-		}else if(unit1.compareTo("cup US") == 0 && (unit2.compareTo("liter") == 0 || unit2.compareTo("litre") == 0)){
+		}else if(unit1.compareTo("US cups") == 0 && (unit2.compareTo("liter") == 0 || unit2.compareTo("litre") == 0)){
 			result = ConverterMath.cupsToLiters(value);
-		}else if(unit1.compareTo("cup US") == 0 && unit1.compareTo("gallon US") == 0){
+		}else if(unit1.compareTo("US cups") == 0 && unit2.compareTo("US gallons") == 0){
 			result = ConverterMath.cupsToGallons(value);
-		}else if(unit1.compareTo("gallon US") == 0 && unit2.compareTo("cup US") == 0 ){
+		}else if(unit1.compareTo("US gallons") == 0 && unit2.compareTo("US cups") == 0 ){
 			result = ConverterMath.gallonsToCups(value);
 		}
-		return result;
+		return transformResult(result);
 	}
 	
 	
@@ -119,7 +119,13 @@ public class Converter {
 		}else if(unit1.compareTo("fahrenheit") == 0 && unit2.compareTo("kelvin") == 0){
 			result = ConverterMath.fahrenheitToKelvin(value);
 		}
-		return result;
+		return transformResult(result);
 	}
 	
+	private static double transformResult(double result){
+		if(result < 1.00 && result > -1.00){
+			return result;
+		}
+		return Math.round(result * 100.0 ) / 100.0; 
+	}
 }

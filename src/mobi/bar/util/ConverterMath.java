@@ -6,7 +6,7 @@ public class ConverterMath {
 	/*Distance */
 	private final static double kilometerInMiles = 0.621371192;
 	private final static double kilometerInCm = 100000;
-	private final static double kilometerInMm = 10000000;
+	private final static double kilometerInMm = 1000000;
 	private final static double kilometerInInch = 39370.0787;
 	
 	public static double milesToKilometers(double miles){
