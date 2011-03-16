@@ -14,6 +14,7 @@ import com.markupartist.android.widget.IntentAction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -176,6 +177,16 @@ public class TemperatureActivity extends Activity {
 			}
 		}
 		super.onPause();
+	}
+
+	@Override
+	protected void onStop() {
 		finish();
+		super.onStop();
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
 	}
 }
