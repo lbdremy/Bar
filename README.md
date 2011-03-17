@@ -1,6 +1,6 @@
 # Informations
 <img height="300px" src="https://ssl.gstatic.com/android/market/mobi.bar/f-0-c338ba20ad2c6dd2a0ccfeca9a725a667a4518cc"/>
-</ br>
+<br />
 Bar is a converter available on the android market <a href="https://market.android.com/details?id=mobi.bar&feature=search_result">here</a>.
 Bar allows to convert temperature, weight, volume and distance very quickly and easily.
 On the home page you will find your last 15 conversions.
