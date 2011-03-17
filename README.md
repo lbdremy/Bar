@@ -1,5 +1,5 @@
 # Informations
-<img src="https://ssl.gstatic.com/android/market/mobi.bar/f-0-c338ba20ad2c6dd2a0ccfeca9a725a667a4518cc"/>
+<img height="100px" src="https://ssl.gstatic.com/android/market/mobi.bar/f-0-c338ba20ad2c6dd2a0ccfeca9a725a667a4518cc"/>
 Bar is a converter available on the android market <a href="https://market.android.com/details?id=mobi.bar&feature=search_result">here</a>.
 Bar allows to convert temperature, weight, volume and distance very quickly and easily.
 On the home page you will find your last 15 conversions.
@@ -12,8 +12,8 @@ If you want another unit or new kind of conversion tell me, I will do as fast as
 
 # Require
  -Library ActionBar
- 	*You can find the original library here: https://github.com/johannilsson/android-actionbar. Thank you Johannnilsson !
- 	*Or the modified library here: https://github.com/lbdremy/actionbar
+ 	You can find the original library <a href="https://github.com/johannilsson/android-actionbar"> here</a>. Thank you Johannnilsson !
+ 	Or the modified library <a href="https://github.com/lbdremy/actionbar"> there </a>.
 
 # Licence
 Copyright (C) 2011 by Remy Loubradou
