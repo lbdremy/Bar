@@ -13,9 +13,9 @@ If you want another unit or new kind of conversion tell me, I will do as fast as
 <img src="https://ssl.gstatic.com/android/market/mobi.bar/ss-1-320-480-160-1-99e221af6fed1034d08c8edf286430bff5e0f86c"/>
 
 # Require
- -Library ActionBar
- 	You can find the original library <a href="https://github.com/johannilsson/android-actionbar"> here</a>. Thank you Johannnilsson !
- 	Or the modified library <a href="https://github.com/lbdremy/actionbar"> there </a>.
+ *Library ActionBar
+ You can find the original library <a href="https://github.com/johannilsson/android-actionbar"> here</a>. Thank you Johannnilsson !
+ Or the modified library <a href="https://github.com/lbdremy/actionbar"> there </a>.
 
 # Licence
 Copyright (C) 2011 by Remy Loubradou
@@ -24,7 +24,7 @@ Copyright (C) 2011 by Remy Loubradou
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
