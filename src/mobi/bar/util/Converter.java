@@ -123,9 +123,10 @@ public class Converter {
 	}
 	
 	private static double transformResult(double result){
+		result = result * 100.0;
 		if(result < 1.00 && result > -1.00){
 			return result;
 		}
-		return Math.round(result * 100.0 ) / 100.0; 
+		return Math.round(result) / 100.0; 
 	}
 }
